@@ -1,7 +1,7 @@
 {
   "name": "twitter-ios-modal",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.2.1",
+  "private": false,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -27,5 +27,34 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "lib/bundle.js",
+  "devDependencies": {
+    "css-loader": "^2.1.1",
+    "node-sass": "^4.12.0",
+    "react-transition-group": "^4.1.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.2",
+    "typescript": "^3.5.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shinyaigeek/twitter-modal.git"
+  },
+  "keywords": [
+    "Twitter",
+    "iOS",
+    "modal",
+    "react"
+  ],
+  "author": "Shinyaigeek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shinyaigeek/twitter-modal/issues"
+  },
+  "homepage": "https://github.com/Shinyaigeek/twitter-modal#readme"
 }
