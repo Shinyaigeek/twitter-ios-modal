@@ -3,7 +3,7 @@ var path = require('path');
 module.exports = {
   entry: './src/Twitter.tsx',
   output: {
-    path: path.resolve(__dirname, './'),
+    path: path.resolve(__dirname, './lib'),
     filename: 'bundle.js',
     libraryTarget: 'commonjs2'
   },

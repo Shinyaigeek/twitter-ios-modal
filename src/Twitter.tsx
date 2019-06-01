@@ -7,7 +7,8 @@ import './Twitter.scss'
 interface TProps {
     flag:boolean,
     NightMode:boolean,
-    handleFlag:Function
+    handleFlag:Function,
+    id:string
 }
 
 
@@ -18,7 +19,6 @@ export default class Twitter extends React.Component <TProps,any> {
         // @ts-ignore
         const childrenHeight:number = this.props.children ? 43 * this.props.children.length:0;
         this.state = {
-            flag:this.props.flag,
             modalHeight:height - 90 - childrenHeight
         }
 
@@ -44,20 +44,20 @@ export default class Twitter extends React.Component <TProps,any> {
         const childrenHeight:number = this.props.children ? 43 * this.props.children.length:0;
         const height:number = window.innerHeight - 90 - childrenHeight;
         if(endY >= height * 1.2){
+            this.handleHeight(height);
             return this.props.handleFlag(false);
         }
         return this.handleHeight(height);
     }
 
     render() {
-        console.log(this.props)
-        console.log(this.state)
         return (
             <div>
                 <CSSTransition
-                    in={this.state.flag}
+                    in={this.props.flag}
                     timeout={3000}
                     className={this.props.NightMode ? "Darktwitter--modal":"twitter--modal"}
+                    id={this.props.id}
                     onTouchMove={(e:any) => this.handleMove(e)}
                     style={{top:this.state.modalHeight}}
                     onTouchEnd={(e:any) => this.handleEnd(e)}
@@ -67,7 +67,7 @@ export default class Twitter extends React.Component <TProps,any> {
                 <div className="modal--section__cansel" onClick={() => this.props.handleFlag(false)}>キャンセル</div>
                 </div>
                 </CSSTransition>
-                <div className="awkward--sheet" onClick={() => this.props.handleFlag(false)} style={{display:this.state.flag ? "block":"none"}}></div>
+                <div className="awkward--sheet" onClick={() => this.props.handleFlag(false)} style={{display:this.props.flag ? "block":"none"}}></div>
             </div>
         )
     }
