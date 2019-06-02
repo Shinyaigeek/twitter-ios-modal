@@ -55,7 +55,7 @@ export default class Twitter extends React.Component <TProps,any> {
             <div>
                 <CSSTransition
                     in={this.props.flag}
-                    timeout={3000}
+                    timeout={500}
                     className={this.props.NightMode ? "Darktwitter--modal":"twitter--modal"}
                     id={this.props.id}
                     onTouchMove={(e:any) => this.handleMove(e)}

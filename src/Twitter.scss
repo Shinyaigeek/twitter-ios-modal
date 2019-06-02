@@ -9,16 +9,22 @@
     right: 0px;
     z-index: 999;
     background-color: #ffffff;
+    display: none;
   
   
     &.enter {
       opacity: 0.1;
       transform:translateY(50%);
+      display: block;
     }
     &.enter-active {
       opacity: 1;
       transform:translateY(0%);
-      transition: all 300ms ease-out;
+      transition: all 500ms ease-out;
+      display: block;
+    }
+    &.enter-done {
+      display: block;
     }
     &.exit {
       opacity: 1;
@@ -27,7 +33,7 @@
     &.exit-active {
       opacity: 0.1;
       transform: translateY(50%);
-      transition: all 300ms ease-out;
+      transition: all 500ms ease-out;
     }
     &.exit-done {
       display: none;
@@ -48,9 +54,10 @@
     }
   
     *{
-      font-size: 28px;
       padding: 0px 0;
       margin: 15px 0;
+      height: 33px;
+      font-size: 5vh;
     }
   
   
@@ -70,6 +77,8 @@
         padding: 5px 0;
         width: 93%;
         margin: 0 auto;
+        margin-top: 24px;
+        height: 40px;
       }
     }
   
